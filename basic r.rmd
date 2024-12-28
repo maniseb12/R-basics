@@ -1,0 +1,601 @@
+
+
+
+# R Basics Tutorial 🚀
+Welcome to the R Basics Tutorial! This repository is designed for beginners who want to learn R programming step-by-step.
+
+## Topics Covered:
+1. Introduction to R
+2. Data Types 
+3. Data structure
+4. Control flow 
+
+
+## Getting Started
+1. Install R and RStudio.
+2. Clone this repository:
+
+1. Introduction to R
+#Welcome to the "R Basics Tutorial" repository!🎉
+
+# This project is designed to help beginners learn the fundamentals of R programming—one of the most popular languages for data analysis, statistics, and visualization. Whether you're a student, researcher, or data enthusiast, this tutorial will guide you step-by-step through R's core features and capabilities.
+
+# R Operators
+# In R, operators are symbols used to perform operations on variables and values. 
+# Arithmetic Operators
+```{r}
+# Addition operator (+)
+a <- c (2, 0.1)
+b <- c (2.87, 7)
+print (a+b)
+
+```
+
+```{r}
+# Subtraction Operator (-)
+a <- c (2, 0.1)
+b <- c (2.87, 7)
+print (a-b)
+
+```
+
+```{r}
+# Multiplication Operator (*) 
+a <- c (2, 0.1)
+b <- c (2.87, 7)
+print (a*b)
+
+```
+
+```{r}
+# Division Operator (/) 
+a <- c (2, 0.1)
+b <- c (2.87, 7)
+print (a/b)
+
+```
+
+```{r}
+# Power Operator (^)
+a <- 6
+b <- 2
+print (a^b)
+
+```
+
+```{r}
+# Modulo Operator (%%)
+a <- c (2, 43)
+b <- c (2, 6)
+print (a%%b)
+
+```
+
+# Logical operators in R are used to combine or manipulate logical (Boolean) values—TRUE and FALSE. 
+# These operators are particularly useful in conditional statements and control structures like if, while, and for loops.
+
+```{r}
+# Logical AND operator (&)
+age <- 65
+income <- 25000
+
+# Using '&&' (single comparison)
+if (age >= 60 && income <= 30000) {
+  print("Eligible for senior citizen discount")
+} else {
+  print("Not eligible for discount")
+}
+```
+
+```{r}
+#  Logical OR (| and ||)
+GPA <- 3.2
+extracurricular <- TRUE
+# Using '||' (single comparison)
+if (GPA >= 3.5 || extracurricular) {
+  print("Eligible for scholarship")
+} else {
+  print("Not eligible for scholarship")
+}
+```
+
+```{r}
+# Logical NOT (!)
+homework_submitted <- FALSE
+
+# Using '!'
+if (!homework_submitted) {
+  print("Send reminder: Homework not submitted")
+} else {
+  print("Homework submitted")
+}
+```
+
+```{r}
+# Combining Logical Operators
+age <- 20
+income <- 35000
+co_signer <- TRUE
+
+if ((age >= 18 & income > 40000) | co_signer) {
+  print("Loan approved")
+} else {
+  print("Loan denied")
+}
+```
+
+
+
+
+
+
+
+
+# Basic Data Types in R
+```{r}
+# Numeric (Decimal Values)
+x <- 10.5  
+typeof(x)
+class(x)
+```
+
+```{r}
+# Integer (Whole Numbers)
+y <- 10L   
+typeof(y) 
+class(y)
+```
+
+```{r}
+# Complex Numbers
+z <- 4 + 2i   
+typeof(z)     
+class(z)
+```
+
+```{r}
+#  Logical (Boolean)
+is_adult <- TRUE  
+typeof(is_adult)
+```
+
+```{r}
+# Character (Strings/Text)
+name <- "John"   
+typeof(name)    
+```
+
+```{r}
+# Raw (Binary Data
+r <- charToRaw("Hello") 
+typeof(r)
+```
+
+
+
+
+
+
+
+# R Variables
+# In R, variables are used to store data values such as numbers, strings, or vectors. 
+# They act as containers that hold information, which can be reused and manipulated throughout your program.
+```{r}
+# Valid Variable Name
+my_var <- 10       # Valid
+my.var <- "Hello"  # Valid
+myVar <- TRUE      # Valid
+var1 <- 25         # Valid
+.var <- 5          # Valid
+
+```
+
+```{r}
+# Invalid Variable Names 
+# 1var <- 10    # Invalid: Cannot start with a number
+my-var <- 20  # Invalid: Hyphen is not allowed
+TRUE <- 50    # Invalid: Cannot use reserved keywords
+
+```
+
+```{r}
+# Examples of Assignments
+# Assigning values
+x <- 5         
+y = 10         
+"Hello" -> z   
+
+# Assigning multiple values
+a <- b <- c <- 100  
+```
+
+```{r}
+# Viewing Variable Values 
+x <- 42
+print(x)  # Output: 42
+y <- "R Programming"
+```
+
+```{r}
+# Variable Types and Classes
+num <- 10.5
+class(num)      
+typeof(num)      
+text <- "R Language"
+class(text)      
+log_var <- TRUE
+class(log_var)  
+```
+
+```{r}
+# Changing Variable Types
+x <- "10"                 
+num_x <- as.numeric(x)    
+log_x <- as.logical(1)    
+
+print(num_x)  
+print(log_x) 
+```
+
+```{r}
+# Removing Variables
+rm(x)        
+rm(list = ls()) 
+```
+
+```{r}
+# Variable Scope 🌍
+# Local Variables: Exist only inside a function.
+# Global Variables: Exist throughout the script and can be modified using <<-.
+my_function <- function() {
+  local_var <- 10    # Local variable
+  print(local_var)
+}
+
+my_function()        # Output: 10
+print(local_var)     # Error: object 'local_var' not found
+
+global_var <<- 20    # Global variable
+print(global_var)    # Output: 20
+
+```
+
+
+
+
+
+
+
+
+
+
+# INPUT AND OUTPUT
+```{r}
+# R program to illustrate
+# taking input from the user
+
+# taking input using readline()
+# this command will prompt you
+# to input a desired value
+var = readline();
+
+# convert the inputted value to integer
+var = as.integer(var);
+
+# print the value
+print(var)
+```
+
+```{r}
+my_data <- data.frame(
+  Name = c("John", "Alice", "Bob"),
+  Age = c(25, 30, 22),
+  Score = c(88, 92, 75)
+)
+print(my_data)
+```
+
+
+
+
+
+
+# 3. Data structure
+# Understanding data structures in R is fundamental because R is built around different types of data structures, each serving a specific purpose.
+
+```{r}
+# Vectors
+# Numeric vector
+numeric_vector <- c(1, 2, 3, 4, 5)
+
+# Character vector
+char_vector <- c("apple", "banana", "cherry")
+
+# Logical vector
+logical_vector <- c(TRUE, FALSE, TRUE)
+```
+
+```{r}
+# Accessing elements: Use indexing with square brackets []:
+numeric_vector[1]  
+numeric_vector[2:4] 
+```
+
+```{r}
+#  Matrices
+# A matrix is a two-dimensional data structure where each element is of the same type. 
+# It is essentially a collection of vectors.
+# Create a matrix with 2 rows and 3 columns
+my_matrix <- matrix(1:6, nrow = 2, ncol = 3)
+print(my_matrix)
+```
+
+```{r}
+# Accessing elements: Use [row, column] indexing:
+my_matrix[1, 2]  # Access element in 1st row, 2nd column
+my_matrix[2, ]   # Access entire 2nd row
+```
+
+```{r}
+# Matrix operations: Matrices support matrix multiplication, addition, etc.
+my_matrix + 10  # Add 10 to every element
+my_matrix * 2   # Multiply each element by 2
+
+```
+
+```{r}
+# Data Frames
+# A data frame is a two-dimensional table-like structure where each column can contain different types of data (e.g., numbers, characters, factors). 
+# It is the most commonly used data structure for working with tabular data.-
+# Create a data frame
+my_data <- data.frame(
+  Name = c("John", "Alice", "Bob"),
+  Age = c(25, 30, 22),
+  Score = c(88, 92, 75)
+)
+print(my_data)
+```
+
+```{r}
+# Operations on Data Frames:
+# Accessing columns: You can access columns by name or by index.
+my_data$Name  # Access the 'Name' column
+my_data[1, 3]  # Access the 2nd column (Age)
+
+
+```
+
+```{r}
+# Subsetting rows: You can select specific rows using row indices.
+my_data[1, ]  # Access the first row
+my_data[1:2, ]  # Access the first two rows
+
+```
+
+```{r}
+# Adding a new column:
+my_data$Country <- c("USA", "Canada", "UK")
+print(my_data)
+```
+
+```{r}
+# Lists
+# A list is a versatile data structure in R that can hold elements of different types (e.g., vectors, data frames, matrices, and even other lists). 
+# Lists are useful when you need to store a collection of objects that are not of the same type.
+# Use the list() function to create a list.
+# Create a list with different types of data
+my_list <- list(
+  name = "John",
+  age = 25,
+  scores = c(88, 92, 75),
+  dataframe = data.frame(Name = "Alice", Age = 30, Score = 92)
+)
+print(my_list)
+```
+
+```{r}
+# Operations on Lists:
+# Accessing elements: Use the $ operator or double square brackets [[ ]] to access elements.
+my_list$name  # Access the 'name' element
+my_list[[2]]  # Access the 2nd element (age)
+```
+
+```{r}
+# Modifying elements: You can modify or add new elements to a list.
+my_list$city <- "New York"  # Add a new element 'city'
+print(my_list$city)
+```
+
+```{r}
+# Matrix operations: Matrices support matrix multiplication, addition, etc.
+my_matrix + 10  # Add 10 to every element
+my_matrix * 2   # Multiply each element by 2
+
+```
+
+
+
+
+
+
+
+# Control flow 
+#  Control flow in R allows you to control the execution of code based on conditions and loops. 
+# It includes conditional statements, loops, and functions that determine the flow of the program.
+```{r}
+# Conditional Statements
+# if Statement
+# Executes code only if a condition is TRUE.
+x <- 10
+if (x > 5) {
+  print("x is greater than 5")
+}
+```
+
+```{r}
+# if...else Statement
+# Executes one block of code if a condition is TRUE, otherwise executes another block.
+x <- 3
+if (x > 5) {
+  print("x is greater than 5")
+} else {
+  print("x is less than or equal to 5")
+}
+```
+
+```{r}
+# else if Statement
+# Checks multiple conditions in sequence.
+x <- 10
+if (x < 5) {
+  print("x is less than 5")
+} else if (x == 10) {
+  print("x is equal to 10")
+} else {
+  print("x is greater than 5 but not 10")
+}
+```
+
+```{r}
+# Loops
+# for Loop
+# Print numbers from 1 to 5
+for (i in 1:5) {
+  print(i)
+}
+
+# Loop through a vector
+fruits <- c("apple", "banana", "cherry")
+for (fruit in fruits) {
+  print(fruit)
+}
+
+# Repeats code for a fixed number of iterations.
+```
+
+```{r}
+# while Loop
+# Repeats code while a condition is TRUE.
+x <- 1
+while (x <= 5) {
+  print(x)
+  x <- x + 1  # Increment x
+}
+```
+
+```{r}
+# repeat Loop
+# Repeats code indefinitely until you manually exit the loop using break.
+x <- 1
+repeat {
+  print(x)
+  x <- x + 1
+  if (x > 5) {
+   break  # Exit the loop
+  } 
+}
+
+```
+
+```{r}
+# repeat Loop
+# Repeats code indefinitely until you manually exit the loop using break.
+x <- 1
+repeat {
+  print(x)
+  x <- x + 1
+  if (x > 5) {
+    break  # Exit the loop
+  }
+}
+```
+
+```{r}
+# Loop Control Statements
+# break
+# Exits the loop immediately, even if iterations are remaining.
+for (i in 1:10) {
+  if (i == 5) {
+    break  # Exit loop when i equals 5
+  }
+  print(i)
+}
+```
+
+```{r}
+#next
+# Skips the current iteration and moves to the next one.
+
+for (i in 1:5) {
+  if (i == 3) {
+    next  # Skip iteration when i equals 3
+  }
+  print(i)
+}
+```
+
+```{r}
+# Switch Statement
+# The switch() function selects one option based on the value of an expression.
+x <- "B"
+result <- switch(x,
+  "A" = "Apple",
+  "B" = "Banana",
+  "C" = "Cherry",
+  "Unknown"
+)
+print(result)
+```
+
+```{r}
+# Example: Combining Loops and Conditions
+# Print Even Numbers Using Loops
+for (i in 1:10) {
+  if (i %% 2 == 0) {  # Check if 'i' is even
+    print(i)
+  }
+}
+```
+
+```{r}
+# Sum of Numbers Using While Loop
+sum <- 0
+i <- 1
+while (i <= 100) {
+  sum <- sum + i
+  i <- i + 1
+}
+print(sum)  
+```
+
+```{r}
+# Functions with Control Flow
+# You can integrate control flow statements inside functions for more flexibility.
+grade <- function(score) {
+  if (score >= 90) {
+    return("A")
+  } else if (score >= 80) {
+    return("B")
+  } else if (score >= 70) {
+    return("C")
+  } else {
+    return("F")
+  }
+}
+print(grade(85)) 
+```
+
+```{r}
+# repeat Loop
+# Repeats code indefinitely until you manually exit the loop using break.
+x <- 1
+repeat {
+  print(x)
+  x <- x + 1
+  if (x > 5) {
+    break  # Exit the loop
+  }
+}
+```
+
+
